@@ -37,4 +37,11 @@ contract("TokenSale Test", async (accounts)=>{
         expect(await instance.balanceOf(accounts[0])).to.be.a.bignumber.equal(new BN(1));
         expect(await instance.balanceOf(tokenSaleInstance.address)).to.be.a.bignumber.equal(totalSupply.sub(new BN(1)))
     })
+
+    it("Should be able to check the kyc white list", async () => {
+        let KycContractInstance = await KycContract.deployed();
+        let ok = await KycContractInstance.kycStatus(accounts[0]);
+        expect(ok).equal(true)
+    })
+
 });
