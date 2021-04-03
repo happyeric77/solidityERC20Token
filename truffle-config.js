@@ -4,9 +4,6 @@ const mnemonic = "";
 const accountIndex = 0;
 require("dotenv").config({path: "./.env"})
 
-console.log(path.resolve("./.env"))
-console.log(process.env.MNEMONIC)
-console.log(path.join(__dirname, "src/"))
 module.exports = {
   contracts_build_directory: path.join(__dirname, "src/contracts"),
   networks: {
